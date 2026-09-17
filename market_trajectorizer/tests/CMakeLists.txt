@@ -25,6 +25,7 @@ set(MT_TEST_SOURCES
     unit/test_theorem_authority_harness.cpp
     unit/test_canonicalizer.cpp
     unit/test_metrics.cpp
+    unit/test_position_sizer.cpp
     unit/test_framework_anchor_q5.cpp
     unit/test_future_section_identity_on_actual_anchor.cpp
     unit/test_authority_rejects_scalar_fallback.cpp
