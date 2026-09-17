@@ -1,6 +1,6 @@
 # Market Trajectorizer
 
-This repository contains `market_trajectorizer/`, a C++20 research engine for deterministic, causality-aware transformation of historical market time series into mathematical state representations, recurrence models, diagnostic artifacts, and backtest inputs.
+Market Trajectorizer is a C++20 research engine for deterministic, causality-aware transformation of historical market time series into mathematical state representations, recurrence models, diagnostic artifacts, and backtest inputs.
 
 It is deliberately framed as research software, not as a claim of profitable trading performance.
 
@@ -46,11 +46,11 @@ The deterministic test path also repeats the same anchor calculation and compare
 
 The implementation contract is documented in:
 
-- [math_contract.md](market_trajectorizer/docs/math_contract.md)
-- [determinism_contract.md](market_trajectorizer/docs/determinism_contract.md)
-- [data_contract.md](market_trajectorizer/docs/data_contract.md)
-- [backtest_contract.md](market_trajectorizer/docs/backtest_contract.md)
-- [repo_map.md](market_trajectorizer/docs/repo_map.md)
+- [math_contract.md](docs/math_contract.md)
+- [determinism_contract.md](docs/determinism_contract.md)
+- [data_contract.md](docs/data_contract.md)
+- [backtest_contract.md](docs/backtest_contract.md)
+- [repo_map.md](docs/repo_map.md)
 
 These files are part of the software boundary. They state the identities and acceptance conditions the code is intended to realize.
 
@@ -59,20 +59,20 @@ These files are part of the software boundary. They state the identities and acc
 From the repository root:
 
 ```bash
-cmake -S market_trajectorizer -B build/market \
+cmake -S . -B build \
   -DMT_ENABLE_CUDA=OFF \
   -DMT_BUILD_BENCHMARKS=OFF \
   -DMT_BUILD_TESTS=ON \
   -DMT_DETERMINISTIC=ON \
   -DCMAKE_BUILD_TYPE=Release
 
-cmake --build build/market --parallel
+cmake --build build --parallel
 ```
 
 Run the reproducible unit/core suite:
 
 ```bash
-ctest --test-dir build/market --output-on-failure -LE theorem_authority
+ctest --test-dir build --output-on-failure -LE theorem_authority
 ```
 
 ## Authority-gate limitation in this snapshot
