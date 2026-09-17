@@ -38,12 +38,16 @@ set(MT_TEST_SOURCES
 add_executable(mt_unit_tests ${MT_TEST_SOURCES})
 target_link_libraries(mt_unit_tests PRIVATE mt_core Catch2::Catch2WithMain)
 target_compile_features(mt_unit_tests PRIVATE cxx_std_20)
+mt_set_warnings(mt_unit_tests)
+mt_apply_sanitizers(mt_unit_tests)
 
 add_executable(mt_prepare_authority_fixture
     tools/prepare_authority_fixture.cpp
 )
 target_link_libraries(mt_prepare_authority_fixture PRIVATE mt_core)
 target_compile_features(mt_prepare_authority_fixture PRIVATE cxx_std_20)
+mt_set_warnings(mt_prepare_authority_fixture)
+mt_apply_sanitizers(mt_prepare_authority_fixture)
 
 include(CTest)
 include(Catch)
