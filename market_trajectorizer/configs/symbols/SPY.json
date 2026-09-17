@@ -1,0 +1,12 @@
+{
+    "schema_version": 1,
+    "symbol": "SPY",
+    "exchange": "NYSEARCA",
+    "asset_class": "etf_equity",
+    "timeframe": "1m",
+    "tick_size": 0.01,
+    "lot_size": 1,
+    "calendar": "us_equities_rth",
+    "currency": "USD",
+    "raw_csv": "data/ohlcv_SPY_entire_history_dedup.csv"
+}

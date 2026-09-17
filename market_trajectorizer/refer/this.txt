@@ -1,0 +1,802 @@
+[
+\begin{gathered}
+x(t)=\bigl(x_0(t),x_1(t),x_2(t),x_3(t),x_4(t)\bigr)\in\mathbb C^5,
+\qquad
+P(t):=e^{x_3(t)},
+\qquad
+\Pi_3(x_0,x_1,x_2,x_3,x_4):=x_3,\
+x_t(\tau):=x(t+\tau),
+\qquad
+0=\sigma_0(t)<\sigma_1(t)<\sigma_2(t)<\cdots,
+\qquad
+\lim_{\ell\to\infty}\sigma_\ell(t)=+\infty,\
+x_t(\tau)=f_\ell(\tau)\quad\bigl(\tau\in I_\ell(t):=[\sigma_\ell(t),\sigma_{\ell+1}(t))\bigr),\
+H(\xi)=
+\begin{cases}
+0,&\xi<0,\
+1,&\xi\ge0,
+\end{cases}
+\qquad
+g_\ell(\eta;t):=f_\ell(\sigma_\ell(t)+\eta)-f_{\ell-1}(\sigma_\ell(t)+\eta).
+\end{gathered}
+]
+
+[
+\begin{gathered}
+x_t(\tau)
+=========
+
+\sum_{n=0}^{\infty}A_{\phi,n}(t)\tau^n
++
+\sum_{\ell=1}^{\infty}
+H!\bigl(\tau-\sigma_\ell(t)\bigr)
+\sum_{n=0}^{\infty}
+A_{\pi,\ell,n}(t)\bigl(\tau-\sigma_\ell(t)\bigr)^n,\
+J_t^-:=
+\Bigl((A_{\phi,n}(t))*{n\ge0},(\sigma*\ell(t))*{\ell\ge1},(A*{\pi,\ell,n}(t))*{\ell\ge1,n\ge0}\Bigr),\
+F_t[J_t^-](h)
+:=
+\sum*{n=0}^{\infty}A_{\phi,n}(t)h^n
++
+\sum_{\ell=1}^{\infty}
+H!\bigl(h-\sigma_\ell(t)\bigr)
+\sum_{n=0}^{\infty}
+A_{\pi,\ell,n}(t)\bigl(h-\sigma_\ell(t)\bigr)^n.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+H_t^{(N)}:=\sigma(X_t,X_{t-1},\dots,X_{t-N}),
+\qquad
+H_t^{(\infty)}:=\sigma(X_t,X_{t-1},X_{t-2},\dots),\
+H_t^{(0)}\subseteq H_t^{(1)}\subseteq\cdots\subseteq H_t^{(\infty)},\
+A_{\phi,n}^{(N)}(t):=\mathbb E[A_{\phi,n}(t)\mid H_t^{(N)}],\qquad
+A_{\pi,\ell,n}^{(N)}(t):=\mathbb E[A_{\pi,\ell,n}(t)\mid H_t^{(N)}],\qquad
+\sigma_\ell^{(N)}(t):=\mathbb E[\sigma_\ell(t)\mid H_t^{(N)}],\
+J_t^{-,(N)}
+:=
+\Bigl((A_{\phi,n}^{(N)}(t))*{n\ge0},(\sigma*\ell^{(N)}(t))*{\ell\ge1},(A*{\pi,\ell,n}^{(N)}(t))*{\ell\ge1,n\ge0}\Bigr),\
+F_t[J_t^{-,(N)}](h)
+:=
+\sum*{n=0}^{\infty}A_{\phi,n}^{(N)}(t)h^n
++
+\sum_{\ell=1}^{\infty}
+H!\bigl(h-\sigma_\ell^{(N)}(t)\bigr)
+\sum_{n=0}^{\infty}
+A_{\pi,\ell,n}^{(N)}(t)\bigl(h-\sigma_\ell^{(N)}(t)\bigr)^n,\
+J_t^{-,(N)}\xrightarrow[N\to\infty]{}J_t^-,
+\qquad
+F_t[J_t^{-,(N)}](h)\xrightarrow[N\to\infty]{}F_t[J_t^-](h).
+\end{gathered}
+]
+
+[
+\begin{gathered}
+|b_{x,\phi,n}(t)|\le C_\phi(t),n!,\rho_\phi(t)^{-n},
+\qquad
+|b_{x,\pi,\ell,n}(t)|\le C_{\pi,\ell}(t),n!,\rho_{\pi,\ell}(t)^{-n},\
+|A_{\phi,n}(t)|\le C_\phi(t)\rho_\phi(t)^{-n},
+\qquad
+|A_{\pi,\ell,n}(t)|\le C_{\pi,\ell}(t)\rho_{\pi,\ell}(t)^{-n},\
+W_m:=W_m^{02},
+\qquad
+P_m:=W_m,
+\qquad
+\rho_m:=\rho_0\phi^{-m},
+\qquad
+p_{m,t,q}(u):=\sum_{r=0}^{N-1}c_r^{(m,t,q)}u^r.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+A^{(m)}*{F,\alpha}(z)
+:=
+\frac{1}{(2\pi)^Q}
+\int*{[0,2\pi]^Q}
+F!\left(z+\rho_m e^{i\psi}\right)e^{-i\alpha\cdot\psi},d^Q\psi,\
+F!\left(z+\rho_m e^{i\psi}\right)
+=================================
+
+\sum_{\beta\in\mathbb Z_{\ge0}^Q}
+\frac{\partial^\beta F(z)}{\beta!}\rho_m^{|\beta|}e^{i\beta\cdot\psi},\
+A^{(m)}_{F,\alpha}(z)
+=====================
+
+\sum_{\beta\in\mathbb Z_{\ge0}^Q}
+\frac{\partial^\beta F(z)}{\beta!}\rho_m^{|\beta|}
+\frac{1}{(2\pi)^Q}\int_{[0,2\pi]^Q}e^{i(\beta-\alpha)\cdot\psi},d^Q\psi,\
+\frac{1}{(2\pi)^Q}\int_{[0,2\pi]^Q}e^{i(\beta-\alpha)\cdot\psi},d^Q\psi
+=======================================================================
+
+# \prod_{j=1}^{Q}\delta_{\beta_j,\alpha_j}
+
+\delta_{\beta,\alpha},\
+A^{(m)}_{F,\alpha}(z)
+=====================
+
+\frac{\partial^\alpha F(z)}{\alpha!}\rho_m^{|\alpha|},
+\qquad
+\partial^\alpha F(z)=\frac{\alpha!}{\rho_m^{|\alpha|}}A^{(m)}*{F,\alpha}(z),\
+J[F](z,\eta,\kappa)=F(z+\eta,\kappa),
+\qquad
+J*\alpha[F](z,\kappa)=\rho_{m_0}^{-|\alpha|}A^{(m_0)}_{F,\alpha}(z,\kappa)=\frac{1}{\alpha!}\partial^\alpha F(z,\kappa).
+\end{gathered}
+]
+
+[
+\begin{gathered}
+D^\alpha_{m,\infty}[f](x)=\partial^\alpha f(x),
+\qquad
+\lim_{m\to\infty}D^\alpha_{m,\infty}[f](x)=\partial^\alpha f(x),\
+D_i:=\varepsilon_m^{-1}\partial_{\eta_i},
+\qquad
+I_i:=\varepsilon_m I_i\Pi_{\eta_i,\perp},
+\qquad
+D_iI_i=\Pi_{\eta_i,\perp},
+\qquad
+I_iD_i=\Pi_{\eta_i,\perp},\
+\Pi_\perp J^{(m)}_\infty[f](x)
+==============================
+
+\sum_{0<|\alpha|}
+\frac{\varepsilon_m^{|\alpha|}}{\alpha!}
+D^\alpha_{m,\infty}[f](x)\eta^\alpha,\
+I_i\Pi_{\eta_i,\perp}J^{(m)}_\infty[f](x)
+=========================================
+
+\sum_{\alpha_i>0}
+\frac{\varepsilon_m^{|\alpha|+1}}{\alpha!}
+D^\alpha_{m,\infty}[f](x),
+\frac{\eta^{\alpha+e_i}}{\alpha_i+1}.
+\end{gathered}
+]
+
+
+[
+\begin{gathered}
+Y_{N,M}(t)=\bigl(B_{N,M}(t)\otimes I_Q\bigr)\Theta_{N,M}(t),\
+\det B_{N,M}(t)\ne0
+\Longrightarrow
+\Theta_{N,M}(t)=\bigl(B_{N,M}(t)\otimes I_Q\bigr)^{-1}Y_{N,M}(t),\
+\Theta_\infty(t):=J_t^-,
+\qquad
+\Theta_{N,M}(t)\xrightarrow[N,M\to\infty]{}\Theta_\infty(t)
+\quad\text{coefficientwise}.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+\mathfrak J_t^-:=\bigl(a_\alpha(0,\vartheta)\bigr)*{\alpha\in\mathbb Z*{\ge0}^d},
+\qquad
+G_t(\eta,\vartheta):=G_{m,F}^{\gamma}(0,\eta,\vartheta),\
+X_t(h):=
+\Bigl(e^{hL_{\mathrm{jet},\kappa}}\mathfrak J_t^-,
+\mathfrak A_t,
+\Omega(t,h)\Bigr),
+\qquad
+X_t:=\bigl(X_t(h)\bigr)*{h\ge0},
+\qquad
+X_t^+:=\bigl(X_t^+(h)\bigr)*{h\ge0},\
+\mathfrak J_{t+h}^-:=e^{hL_{\mathrm{jet},\kappa}}\mathfrak J_t^-,
+\qquad
+G_{t+h}(\eta,\vartheta)=e^{hL_{\kappa}}G_t(\eta,\vartheta),
+\qquad
+X_t^+(h):=G_{t+h}(0,\vartheta).
+\end{gathered}
+]
+
+
+[
+\begin{gathered}
+\sum_{k=0}^{N-1}\frac{\partial^kF(n,\kappa)}{k!}h^k
+===================================================
+
+# \sum_{k=0}^{N-1}\beta_k(h)\nabla^k x_n
+
+\sum_{k=0}^{N-1}\frac{1}{k!}
+\left(\prod_{j=0}^{k-1}(h+j)\right)
+\sum_{m=0}^{k}(-1)^m\binom{k}{m}x_{n-m},\
+x_{n+h}
+=======
+
+# \sum_{k=0}^{N-1}\binom{h+k-1}{k}\nabla^k x_n
+
+# \sum_{k=0}^{N-1}\frac{\partial^kF(n,\kappa)}{k!}h^k
+
+\sum_{\mu=1}^{R}\sum_{s=0}^{m_\mu-1}\Gamma_{\mu,s}(n)h^s e^{\lambda_\mu h},\
+\mathcal U_{N,h}:\ \partial^k\mapsto\nabla^k,
+\qquad
+\frac{\eta^k}{k!}\mapsto\beta_k(h),\
+N(U)=0
+\iff
+U=U_0+\mathfrak I_\phi(\sigma)H_N(U)
+\iff
+J[N(U)]=0
+\iff
+\forall N,\ \mathfrak N_N[N(U)]_n(h)=0.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+\forall n\in\mathbb Z,\ \forall h\in\mathbb N,\
+F(n+h,\kappa)
+=============
+
+# G_m[F](n,h,\kappa)
+
+# \bigl(e^{hL_{\mathrm{jet},\kappa}}J_n^-\bigr)_0
+
+# \mathfrak G_N^*[b]_{n+h}(0)
+
+\begin{bmatrix}
+P_0\P_1\P_2\P_3\P_4
+\end{bmatrix}^{!!T}
+\Pi_{\mathrm{last}}M_*^h Z_n,\
+\sum_{r=0}^{\infty}\frac{F^{(r)}(n,\kappa)}{r!}h^r
+==================================================
+
+\begin{bmatrix}
+P_0\P_1\P_2\P_3\P_4
+\end{bmatrix}^{!!T}
+\Pi_{\mathrm{last}}M_*^h Z_n,\
+J_{h_1+h_2}[F]_n
+================
+
+J_{h_2}[F]*{n+h_1},
+\qquad
+E*{h_1+h_2}[F]_n
+================
+
+E_{h_2}[F]*{n+h_1},\
+M*{h_1+h_2}[Z_n]
+================
+
+M_{h_2}[Z_{n+h_1}].
+\end{gathered}
+]
+
+[
+\begin{gathered}
+R:=
+\begin{bmatrix}
+P_0\P_1\P_2\P_3\P_4
+\end{bmatrix}^{!!T}\Pi_{\mathrm{last}},
+\qquad
+U_*:=\sum_{j=0}^{\infty}\widetilde K^{,j}U_0,
+\qquad
+\mathfrak F_{U_0}(n):=B(U_*)(n,\kappa),\
+\mathscr U_{U_0}(n,h):=\mathfrak F_{U_0}(n+h),\
+\mathscr U_{U_0}(n,h)
+=====================
+
+# \sum_{r=0}^{\infty}\rho_m^{-r}A^{(m)}*{\mathfrak F*{U_0},r}(n)h^r
+
+# \sum_{r=0}^{\infty}\frac{\mathfrak F_{U_0}^{(r)}(n)}{r!}h^r
+
+# R,M_*^h Z_n
+
+\sum_{\lambda\in\sigma(M_*)}\sum_{s=0}^{\nu_\lambda-1}\binom{h}{s}\lambda^{,h-s}\Gamma_{\lambda,s}(n),\
+\mathscr U_{U_0}(n,h_1+h_2)
+===========================
+
+# \mathscr U_{U_0}(n+h_1,h_2)
+
+\mathscr U_{U_0}(n+h_2,h_1).
+\end{gathered}
+]
+
+[
+\begin{gathered}
+\mathcal R_{U_0}(n,z):=\sum_{h=0}^{\infty}\mathscr U_{U_0}(n,h)z^h
+==================================================================
+
+# R(I-zM_*)^{-1}Z_n
+
+\frac{R,\operatorname{adj}(I-zM_*),Z_n}{\det(I-zM_*)},\
+\det(I-zM_*)=\prod_{\lambda\in\sigma(M_*)}(1-\lambda z)^{m_\lambda},\
+\mathcal R_{U_0}(n,z)
+=====================
+
+\sum_{\lambda\in\sigma(M_*)}\sum_{s=0}^{\nu_\lambda-1}
+\Gamma_{\lambda,s}(n)\frac{z^s}{(1-\lambda z)^{s+1}},\
+\partial_z(I-zM_*)^{-1}=(I-zM_*)^{-1}M_*(I-zM_*)^{-1},\
+\partial_z^p(I-zM_*)^{-1}
+=========================
+
+p!,(I-zM_*)^{-1}\bigl(M_*(I-zM_*)^{-1}\bigr)^p,\
+\partial_z^p\mathcal R_{U_0}(n,z)
+=================================
+
+p!R(I-zM_*)^{-1}\bigl(M_*(I-zM_*)^{-1}\bigr)^pZ_n.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+u_h:=\mathscr U_{U_0}(n,h),
+\qquad
+\chi_{M_*}(\lambda)=\lambda^d+a_{d-1}\lambda^{d-1}+\cdots+a_0,
+\qquad
+\chi_{M_*}(S_h)u_h=0,\
+u_{h+d}+a_{d-1}u_{h+d-1}+\cdots+a_1u_{h+1}+a_0u_h=0,\
+H_N:=(u_{i+j})*{0\le i,j\le N},
+\qquad
+\operatorname{rank}H_N\le d,
+\qquad
+r:=\min{m\ge1:\det H_m=0},\
+H*{r-1}c=-v_r,
+\qquad
+c=-H_{r-1}^{-1}v_r,
+\qquad
+u_{h+r}+c_{r-1}u_{h+r-1}+\cdots+c_0u_h=0,\
+q_r(\lambda):=\lambda^r+c_{r-1}\lambda^{r-1}+\cdots+c_0,
+\qquad
+Q_r(z):=1+c_{r-1}z+\cdots+c_0z^r,
+\qquad
+\mathcal R(z)=\frac{P_{r-1}(z)}{Q_r(z)},\
+Y_h=C_r^hY_0,
+\qquad
+u_h=e_1^\top C_r^hY_0,
+\qquad
+u_h=
+\sum_{j=1}^{J}\sum_{s=0}^{\mu_j-1}
+\gamma_{j,s}\binom{h}{s}\lambda_j^{,h-s}.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+Y:=q_D^*DE,
+\qquad
+K_E(Y):=\mathfrak I_\phi(\sigma)H_E(Y),
+\qquad
+b_0:=P_K(Y_0),\
+Y=Y_0+\mathfrak I_\phi(\sigma)H_E(Y),
+\qquad
+(I-K_E)Y=Y_0,
+\qquad
+Y=\sum_{n=0}^{\infty}K_E^nY_0,\
+c:=P_K(Y),
+\qquad
+(I-T)c=b_0,
+\qquad
+c=(I-T)^{-1}b_0=\sum_{n=0}^{\infty}T^n b_0
+==========================================
+
+P_K!\left(\sum_{n=0}^{\infty}K_E^nY_0\right),\
+\delta U_*=(I-D\widetilde K(U_*))^{-1}\delta U_0
+================================================
+
+\sum_{m=0}^{\infty}D\widetilde K(U_*)^m\delta U_0,\
+\delta \mathfrak F_{U_0}
+========================
+
+DB(U_*)(I-D\widetilde K(U_*))^{-1}\delta U_0,\
+\delta \mathscr U_{U_0}(n,h)
+============================
+
+R,M_*^h DZ(\mathfrak F_{U_0}),DB(U_*)(I-D\widetilde K(U_*))^{-1}\delta U_0,\
+\delta \mathcal R_{U_0}(n,z)
+============================
+
+R(I-zM_*)^{-1}DZ(\mathfrak F_{U_0}),DB(U_*)(I-D\widetilde K(U_*))^{-1}\delta U_0.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+P_{t,V}^{(N)}(\tau):=
+\sum_{\epsilon\in\mathbb F_2^r}\sum_{\chi\in\Lambda^\vee}
+\mathfrak M_{m,V,\epsilon,\chi}^{(N)}(\xi_t,\eta,\tau,t),\
+P_{t,V}^{(N)}(\tau)
+===================
+
+\left|(\partial_VE)(\xi_t+\eta,\cdot)+\partial_V\mathfrak X_t^{(N)}(\tau,\cdot)\right|^2,\
+P_{t,V}^{(\infty)}(\tau)
+========================
+
+\left|(\partial_VE)(\xi_t+\eta,\cdot)+\partial_V\mathfrak X_t^{(\infty)}(\tau,\cdot)\right|^2,\
+P_{t,V}^{(N)}(\tau)\to P_{t,V}^{(\infty)}(\tau)\qquad\text{a.s.}
+\end{gathered}
+]
+
+
+[
+\begin{gathered}
+\delta(s):=e^{u\theta(s)},
+\qquad
+\gamma'(s)=\delta(s),
+\qquad
+\delta'(s)=u,\kappa(s),\delta(s),\
+A_n^{(m)}(s)=\frac{f^{(n)}(\gamma(s))}{n!}\rho_m^n\delta(s)^n,
+\qquad
+B_n^{(m)}(s):=\rho_m^{-n}A_n^{(m)}(s)=\frac{f^{(n)}(\gamma(s))}{n!}\delta(s)^n,\
+\frac{d}{ds}A_n^{(m)}(s)=\frac{n+1}{\rho_m}A_{n+1}^{(m)}(s)+u,n,\kappa(s)A_n^{(m)}(s),\
+\frac{d}{ds}B_n^{(m)}(s)=(n+1)B_{n+1}^{(m)}(s)+u,n,\kappa(s)B_n^{(m)}(s),\
+\mathcal I_f^{(m)}(s,h):=\sum_{n=0}^{\infty}B_n^{(m)}(s)h^n
+===========================================================
+
+# \sum_{n=0}^{\infty}\frac{f^{(n)}(\gamma(s))}{n!}\bigl(\delta(s)h\bigr)^n
+
+f!\bigl(\gamma(s)+\delta(s)h\bigr),\
+\partial_h\mathcal I_f^{(m)}(s,h)=\delta(s)f'!\bigl(\gamma(s)+\delta(s)h\bigr),\
+\partial_s\mathcal I_f^{(m)}(s,h)
+=================================
+
+# f'!\bigl(\gamma(s)+\delta(s)h\bigr)\bigl(\gamma'(s)+\delta'(s)h\bigr)
+
+# f'!\bigl(\gamma(s)+\delta(s)h\bigr)\bigl(\delta(s)+u\kappa(s)\delta(s)h\bigr)\
+
+# \bigl(1+u\kappa(s)h\bigr)\delta(s)f'!\bigl(\gamma(s)+\delta(s)h\bigr)
+
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal I_f^{(m)}(s,h).
+\end{gathered}
+]
+
+
+[
+\begin{gathered}
+\mathfrak F_{U_0}(n+\xi)
+========================
+
+\sum_{j=1}^{J}\sum_{q=0}^{\mu_j-1}
+\gamma_{j,q}(n)\binom{\xi}{q}\lambda_j^{,\xi-q},\
+\alpha(s;n):=\gamma(s)-n,
+\qquad
+\Lambda_j(s):=\lambda_j^{,\delta(s)},\
+\mathcal I_{U_0}^{(m)}(n,s,h)
+=============================
+
+# \mathfrak F_{U_0}!\bigl(\gamma(s)+\delta(s)h\bigr)
+
+\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\binom{h}{m}\Lambda_j(s)^{,h-m},\
+\mathcal G_{U_0}^{\mathrm{int},(m)}(n,s,z)
+:=
+\sum_{h=0}^{\infty}\mathcal I_{U_0}^{(m)}(n,s,h)z^h
+===================================================
+
+\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\frac{z^m}{(1-\Lambda_j(s)z)^{m+1}},\
+Q_r^{\mathrm{int}}(n,s,z):=\prod_{j=1}^{J}(1-\Lambda_j(s)z)^{\mu_j},
+\qquad
+P_{r-1}^{\mathrm{int}}(n,s,z):=
+Q_r^{\mathrm{int}}(n,s,z)\mathcal G_{U_0}^{\mathrm{int},(m)}(n,s,z),\
+\mathcal G_{U_0}^{\mathrm{int},(m)}(n,s,z)
+==========================================
+
+\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)}.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+q_r^{\mathrm{int}}(n,s,\lambda)
+:=
+\lambda^r+c_{r-1}^{\mathrm{int}}(n,s)\lambda^{r-1}+\cdots+c_0^{\mathrm{int}}(n,s)
+=================================================================================
+
+\prod_{j=1}^{J}(\lambda-\Lambda_j(s))^{\mu_j},\
+Q_r^{\mathrm{int}}(n,s,z)=z^r q_r^{\mathrm{int}}(n,s,z^{-1}),
+\qquad
+S_h\mathcal I_{U_0}^{(m)}(n,s,h):=\mathcal I_{U_0}^{(m)}(n,s,h+1),\
+q_r^{\mathrm{int}}(n,s,S_h)\mathcal I_{U_0}^{(m)}(n,s,h)=0,\
+\mathcal I_{U_0}^{(m)}(n,s,h+r)
++
+c_{r-1}^{\mathrm{int}}(n,s)\mathcal I_{U_0}^{(m)}(n,s,h+r-1)
++\cdots+
+c_0^{\mathrm{int}}(n,s)\mathcal I_{U_0}^{(m)}(n,s,h)
+=0,\
+\partial_sQ_r^{\mathrm{int}}(n,s,z)
+===================================
+
+*
+
+Q_r^{\mathrm{int}}(n,s,z),
+z\sum_{j=1}^{J}\mu_j\frac{\Lambda_j'(s)}{1-\Lambda_j(s)z},\
+Q_r^{\mathrm{int}}\partial_s\mathcal G_{U_0}^{\mathrm{int},(m)}
+---------------------------------------------------------------
+
+Q_r^{\mathrm{int}},z
+\left(
+\sum_{j=1}^{J}\mu_j\frac{\Lambda_j'(s)}{1-\Lambda_j(s)z}
+\right)
+\mathcal G_{U_0}^{\mathrm{int},(m)}
+===================================
+
+\partial_sP_{r-1}^{\mathrm{int}}.
+\end{gathered}
+]
+
+
+[
+\begin{gathered}
+\mathcal H_N^{\mathrm{int}}(n,s)
+:=
+\Bigl(\mathcal I_{U_0}^{(m)}(n,s,i+j)\Bigr)*{0\le i,j\le N},
+\qquad
+\operatorname{rank}\mathcal H_N^{\mathrm{int}}(n,s)\le r,\
+\det\mathcal H_N^{\mathrm{int}}(n,s)=0\qquad(N\ge r),\
+\Delta_r^{\mathrm{int}}(n,s;\lambda)
+:=
+\det\Bigl(\mathcal I*{U_0}^{(m)}(n,s,i+j+1)-\lambda,\mathcal I_{U_0}^{(m)}(n,s,i+j)\Bigr)_{0\le i,j\le r-1},\
+\Delta_r^{\mathrm{int}}(n,s;\lambda)
+====================================
+
+(-1)^r\det\mathcal H_{r-1}^{\mathrm{int}}(n,s),q_r^{\mathrm{int}}(n,s,\lambda),\
+q_r^{\mathrm{int}}(n,s,\lambda)
+===============================
+
+(-1)^r\frac{\Delta_r^{\mathrm{int}}(n,s;\lambda)}{\det\mathcal H_{r-1}^{\mathrm{int}}(n,s)},\
+\operatorname{ord}*{z=\Lambda_j(s)^{-1}}\mathcal G*{U_0}^{\mathrm{int},(m)}(n,s,z)=\mu_j,\
+\widetilde\Gamma_{j,\mu_j-1}^{\mathrm{int}}(n,s)
+================================================
+
+\Lambda_j(s)^{\mu_j-1}
+\lim_{z\to\Lambda_j(s)^{-1}}
+(1-\Lambda_j(s)z)^{\mu_j}
+\mathcal G_{U_0}^{\mathrm{int},(m)}(n,s,z),\
+\widetilde\Gamma_{j,\mu_j-1}^{\mathrm{int}}(n,s)
+================================================
+
+(-1)^{\mu_j}\Lambda_j(s)^{-1}
+\operatorname*{Res}*{z=\Lambda_j(s)^{-1}}
+\left[
+\bigl(z-\Lambda_j(s)^{-1}\bigr)^{\mu_j-1}
+\mathcal G*{U_0}^{\mathrm{int},(m)}(n,s,z)
+\right],\
+\mathcal E_{U_0}^{\mathrm{int},(m)}(n,s,\tau)
+:=
+\sum_{h=0}^{\infty}\mathcal I_{U_0}^{(m)}(n,s,h)\frac{\tau^h}{h!}
+=================================================================
+
+\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\frac{\tau^m}{m!}e^{\Lambda_j(s)\tau},\
+\partial_\tau^h\mathcal E_{U_0}^{\mathrm{int},(m)}(n,s,\tau)\Big|_{\tau=0}
+==========================================================================
+
+\mathcal I_{U_0}^{(m)}(n,s,h),
+\qquad
+q_r^{\mathrm{int}}(n,s,\partial_\tau)\mathcal E_{U_0}^{\mathrm{int},(m)}(n,s,\tau)=0.
+\end{gathered}
+]
+
+
+[
+\begin{gathered}
+q^*E_h[E]*n=E_h[q^*E]*n,
+\qquad
+q^*J_h[E]*n=J_h[q^*E]*n,
+\qquad
+q^*N_h[b]*n=N_h[q^*b]*n,
+\qquad
+q^*M_h[Z_n]=M_h[q^*Z_n],\
+q^*\mathcal R*{E_0}(n,z)=\mathcal R*{q^*E_0}(n,z),
+\qquad
+q^*\mathcal I*{E_0}^{(m)}(n,s,h)=\mathcal I*{q^*E_0}^{(m)}(n,s,h),
+\qquad
+q^*\mathcal G*{E_0}^{\mathrm{int},(m)}(n,s,z)=\mathcal G*{q^*E_0}^{\mathrm{int},(m)}(n,s,z),\
+X(q^*f)=0,
+\qquad
+X!\bigl(\mathcal R_{q^*E_0}(n,z)\bigr)=0,
+\qquad
+X!\bigl(\mathcal I_{q^*E_0}^{(m)}(n,s,h)\bigr)=0,
+\qquad
+X!\bigl(\mathcal G_{q^*E_0}^{\mathrm{int},(m)}(n,s,z)\bigr)=0.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+\mathcal T_t(h):=F_t[J_t^-](h),\
+\mathcal T_t(h)
+===============
+
+# X_t^+(h)
+
+# F(n+h,\kappa)
+
+# G_m[F](n,h,\kappa)
+
+# \bigl(e^{hL_{\mathrm{jet},\kappa}}J_n^-\bigr)_0
+
+# \mathfrak G_N^*[b]_{n+h}(0)
+
+# R,M_*^h Z_n,\
+
+# \sum_{\lambda\in\sigma(M_*)}\sum_{s=0}^{\nu_\lambda-1}\binom{h}{s}\lambda^{,h-s}\Gamma_{\lambda,s}(n)
+
+# \sum_{r=0}^{\infty}\frac{F^{(r)}(n,\kappa)}{r!}h^r
+
+# \sum_{k=0}^{N-1}\binom{h+k-1}{k}\nabla^k x_n,\
+
+# [z^h]\mathcal R_{U_0}(n,z)
+
+# [z^h]\frac{R,\operatorname{adj}(I-zM_*),Z_n}{\det(I-zM_*)}
+
+# [z^h]\sum_{\lambda\in\sigma(M_*)}\sum_{s=0}^{\nu_\lambda-1}\Gamma_{\lambda,s}(n)\frac{z^s}{(1-\lambda z)^{s+1}},\
+
+# \mathfrak F_{U_0}(n+h)
+
+# \sum_{j=1}^{J}\sum_{s=0}^{\mu_j-1}\gamma_{j,s}\binom{h}{s}\lambda_j^{,h-s}
+
+# e_1^\top C_r^hY_0
+
+[z^h]\frac{P_{r-1}(z)}{Q_r(z)}.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+\mathcal T_t^{\mathrm{int}}(s,h)
+:=
+\mathcal I_{U_0}^{(m)}(n,s,h)
+=============================
+
+# \mathfrak F_{U_0}!\bigl(\gamma(s)+e^{u\theta(s)}h\bigr),\
+
+\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\binom{h}{m}\Lambda_j(s)^{,h-m}
+=========================================================================
+
+# [z^h]\mathcal G_{U_0}^{\mathrm{int},(m)}(n,s,z)
+
+[z^h]\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)},\
+Q_r^{\mathrm{int}}(n,s,z)=\prod_{j=1}^{J}(1-\Lambda_j(s)z)^{\mu_j},
+\qquad
+q_r^{\mathrm{int}}(n,s,S_h)\mathcal T_t^{\mathrm{int}}(s,h)=0,\
+\partial_s\mathcal T_t^{\mathrm{int}}(s,h)
+==========================================
+
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal T_t^{\mathrm{int}}(s,h).
+\end{gathered}
+]
+
+
+[
+\begin{gathered}
+\mathcal L_t^{\mathrm{int}}(s,h):=\Pi_3\mathcal T_t^{\mathrm{int}}(s,h),\
+\mathcal P_t^{\mathrm{int}}(s,h):=\exp!\bigl(\mathcal L_t^{\mathrm{int}}(s,h)\bigr),\
+\mathcal R_t^{\mathrm{int}}(s,h):=\mathcal L_t^{\mathrm{int}}(s,h)-\mathcal L_t^{\mathrm{int}}(s,0),\
+\Sigma_{t,V}^{(N)}(s,h):=P_{t,V}^{(N)}!\bigl(\gamma(s)+\delta(s)h\bigr),
+\qquad
+\Sigma_{t,V}^{(\infty)}(s,h):=P_{t,V}^{(\infty)}!\bigl(\gamma(s)+\delta(s)h\bigr),\
+\Sigma_{t,V}^{(N)}(s,h)\to\Sigma_{t,V}^{(\infty)}(s,h)\qquad\text{a.s.}
+\end{gathered}
+]
+
+[
+\begin{gathered}
+\partial_s\mathcal L_t^{\mathrm{int}}(s,h)
+==========================================
+
+# \Pi_3\partial_s\mathcal T_t^{\mathrm{int}}(s,h)
+
+# \Pi_3\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal T_t^{\mathrm{int}}(s,h)
+
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal L_t^{\mathrm{int}}(s,h),\
+\partial_h\mathcal P_t^{\mathrm{int}}(s,h)
+==========================================
+
+# e^{\mathcal L_t^{\mathrm{int}}(s,h)}\partial_h\mathcal L_t^{\mathrm{int}}(s,h)
+
+\mathcal P_t^{\mathrm{int}}(s,h)\partial_h\mathcal L_t^{\mathrm{int}}(s,h),\
+\partial_s\mathcal P_t^{\mathrm{int}}(s,h)
+==========================================
+
+# e^{\mathcal L_t^{\mathrm{int}}(s,h)}\partial_s\mathcal L_t^{\mathrm{int}}(s,h)
+
+\mathcal P_t^{\mathrm{int}}(s,h)\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal L_t^{\mathrm{int}}(s,h),\
+\partial_s\mathcal P_t^{\mathrm{int}}(s,h)
+==========================================
+
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal P_t^{\mathrm{int}}(s,h),\
+\partial_s\mathcal R_t^{\mathrm{int}}(s,h)
+==========================================
+
+# \partial_s\mathcal L_t^{\mathrm{int}}(s,h)-\partial_s\mathcal L_t^{\mathrm{int}}(s,0),\
+
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal L_t^{\mathrm{int}}(s,h)-\partial_h\mathcal L_t^{\mathrm{int}}(s,0),\
+q_r^{\mathrm{int}}(n,s,S_h)\mathcal L_t^{\mathrm{int}}(s,h)=0.
+\end{gathered}
+]
+
+[
+\begin{gathered}
+\mathbb T_t(s,h)
+:=
+\Bigl(
+\mathcal T_t^{\mathrm{int}}(s,h),
+\mathcal L_t^{\mathrm{int}}(s,h),
+\mathcal P_t^{\mathrm{int}}(s,h),
+\mathcal R_t^{\mathrm{int}}(s,h),
+\Sigma_{t,V}^{(\infty)}(s,h)
+\Bigr),\
+\mathbb T_t(s,h)
+================
+
+\Bigl(
+\mathfrak F_{U_0}!\bigl(\gamma(s)+e^{u\theta(s)}h\bigr),
+\Pi_3\mathfrak F_{U_0}!\bigl(\gamma(s)+e^{u\theta(s)}h\bigr),
+\exp!\bigl(\Pi_3\mathfrak F_{U_0}!\bigl(\gamma(s)+e^{u\theta(s)}h\bigr)\bigr),\
+\Pi_3\mathfrak F_{U_0}!\bigl(\gamma(s)+e^{u\theta(s)}h\bigr)-\Pi_3\mathfrak F_{U_0}!\bigl(\gamma(s)\bigr),
+P_{t,V}^{(\infty)}!\bigl(\gamma(s)+\delta(s)h\bigr)
+\Bigr),\
+========
+
+\Biggl(
+\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\binom{h}{m}\Lambda_j(s)^{,h-m},\
+\Pi_3\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\binom{h}{m}\Lambda_j(s)^{,h-m},\
+\exp!\Bigl(\Pi_3\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\binom{h}{m}\Lambda_j(s)^{,h-m}\Bigr),\
+\Pi_3\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\Bigl[\binom{h}{m}\Lambda_j(s)^{,h-m}-\delta_{m0}\Bigr],\
+P_{t,V}^{(\infty)}!\bigl(\gamma(s)+\delta(s)h\bigr)
+\Biggr),\
+=========
+
+\Biggl(
+[z^h]\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)},
+\Pi_3[z^h]\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)},
+\exp!\Bigl(\Pi_3[z^h]\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)}\Bigr),\
+\Pi_3[z^h]\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)}
+-------------------------------------------------------------------------
+
+\Pi_3[z^0]\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)},
+P_{t,V}^{(\infty)}!\bigl(\gamma(s)+\delta(s)h\bigr)
+\Biggr).
+\end{gathered}
+]
+
+[
+\boxed{
+\begin{aligned}
+&\partial_s\mathbb T_t(s,h)
+===========================
+
+\Bigl(
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal T_t^{\mathrm{int}}(s,h),\
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal L_t^{\mathrm{int}}(s,h),\
+&\qquad\qquad
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal P_t^{\mathrm{int}}(s,h),\
+\bigl(1+u\kappa(s)h\bigr)\partial_h\mathcal L_t^{\mathrm{int}}(s,h)-\partial_h\mathcal L_t^{\mathrm{int}}(s,0),\
+\partial_s\Sigma_{t,V}^{(\infty)}(s,h)
+\Bigr),[1mm]
+&q_r^{\mathrm{int}}(n,s,S_h),\mathcal T_t^{\mathrm{int}}(s,h)=0,
+\qquad
+q_r^{\mathrm{int}}(n,s,S_h),\mathcal L_t^{\mathrm{int}}(s,h)=0,[1mm]
+&Q_r^{\mathrm{int}}(n,s,z),\mathcal G_{U_0}^{\mathrm{int},(m)}(n,s,z)=P_{r-1}^{\mathrm{int}}(n,s,z),[1mm]
+&\mathcal T_t^{\mathrm{int}}(s,h)
+=================================
+
+# [z^h]\mathcal G_{U_0}^{\mathrm{int},(m)}(n,s,z)
+
+# [z^h]\frac{P_{r-1}^{\mathrm{int}}(n,s,z)}{Q_r^{\mathrm{int}}(n,s,z)}
+
+\sum_{j=1}^{J}\sum_{m=0}^{\mu_j-1}
+\widetilde\Gamma_{j,m}^{\mathrm{int}}(n,s)\binom{h}{m}\Lambda_j(s)^{,h-m},[1mm]
+&\mathcal P_t^{\mathrm{int}}(s,h)
+=================================
+
+\exp!\bigl(\Pi_3\mathcal T_t^{\mathrm{int}}(s,h)\bigr),[1mm]
+&\mathbb T_t(s,h)
+=================
+
+\Bigl(
+\mathcal T_t^{\mathrm{int}}(s,h),
+\Pi_3\mathcal T_t^{\mathrm{int}}(s,h),
+\exp(\Pi_3\mathcal T_t^{\mathrm{int}}(s,h)),
+\Pi_3\mathcal T_t^{\mathrm{int}}(s,h)-\Pi_3\mathcal T_t^{\mathrm{int}}(s,0),
+P_{t,V}^{(\infty)}(\gamma(s)+\delta(s)h)
+\Bigr),[1mm]
+&q^*\mathbb T_t=(\mathbb T_t)_{q^*},
+\qquad
+X(\mathbb T_t)=0.
+\end{aligned}}
+]

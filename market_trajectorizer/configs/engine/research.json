@@ -1,0 +1,21 @@
+{
+    "schema_version": 1,
+    "engine": "research",
+    "deterministic": false,
+    "fp32_profile": true,
+    "H": 128,
+    "N_phi": 24,
+    "N_pi": 12,
+    "L_max": 16,
+    "recurrence_window": 128,
+    "tol_rank": 1e-7,
+    "tol_evolution": 1e-6,
+    "tol_closure": 1e-6,
+    "tol_interstice": 1e-4,
+    "s_count": 128,
+    "ds": 0.5,
+    "u_imag": 1.0,
+    "changepoint": { "k_return": 2.5, "k_range": 2.5, "k_volume": 3.5, "rolling_window": 32, "min_separation": 4 },
+    "section": { "N_phi": 24, "N_pi": 12, "L_max": 16 },
+    "torus":   { "Q": 5, "order_max": 12, "M_per_dim": 16, "rho_m": 0.075 }
+}

@@ -1,0 +1,35 @@
+{
+    "schema_version": 1,
+    "name": "spy_research",
+    "symbol": "SPY",
+    "engine_config": "configs/engine/default.json",
+    "starting_equity": 1000000.0,
+    "fee_bps": 1.0,
+    "slippage_bps": 0.5,
+    "fill_lag_bars": 1,
+    "intrabar": false,
+    "research_non_authoritative": true,
+    "signal": {
+        "h_eval": 16,
+        "signal_threshold": 1e-4,
+        "stop_atr_mult": 2.0,
+        "long_threshold": 0.0,
+        "short_threshold": 0.0,
+        "dd_threshold": 0.05,
+        "lambda_energy": 1.0,
+        "lambda_drawdown": 1.0,
+        "lambda_curvature": 1.0,
+        "require_authoritative_anchor": true,
+        "require_framework_energy": true,
+        "allow_proxy_energy_in_research": true,
+        "research_heuristic_signal": false
+    },
+    "walk_forward": {
+        "train_min": 98280,
+        "test_window": 780,
+        "step": 780,
+        "horizon_max": 64,
+        "anchor_stride": 60,
+        "max_windows": 8
+    }
+}

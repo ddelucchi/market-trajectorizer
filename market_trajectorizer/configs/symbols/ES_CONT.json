@@ -1,0 +1,11 @@
+{
+    "schema_version": 1,
+    "symbol": "ES_CONT",
+    "exchange": "CME",
+    "asset_class": "futures_index",
+    "timeframe": "1m",
+    "tick_size": 0.25,
+    "lot_size": 1,
+    "calendar": "us_futures_rth",
+    "currency": "USD"
+}

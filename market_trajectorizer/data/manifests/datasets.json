@@ -1,0 +1,32 @@
+{
+    "schema": "symbol_store_v1",
+    "schema_version": 1,
+    "datasets": [
+        {
+            "symbol": "SPY",
+            "timeframe": "1m",
+            "exchange": "NYSEARCA",
+            "asset_class": "etf_equity",
+            "calendar": "us_equities_rth",
+            "currency": "USD",
+            "tick_size": 0.01,
+            "raw_csv": "data/ohlcv_SPY_entire_history_dedup.csv",
+            "canonical_path": "data/canonical/SPY.bin",
+            "n_bars": 4668856,
+            "t_first": 728319660000000000,
+            "t_last": 1754006340000000000,
+            "t_first_iso_utc": "1993-01-29T15:01:00Z",
+            "t_last_iso_utc": "2025-07-31T23:59:00Z"
+        }
+    ],
+    "symbols": [
+        {
+            "symbol": "SPY",
+            "timeframe": "1m",
+            "canonical_path": "data/canonical/SPY.bin",
+            "t_first": 728319660000000000,
+            "t_last": 1754006340000000000,
+            "n_bars": 4668856
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "schema_version": 1,
+    "name": "experiment_01_default",
+    "engine_config":   "configs/engine/default.json",
+    "backtest_config": "configs/backtests/default.json",
+    "symbols":         ["configs/symbols/ES_CONT.json"],
+    "anchor_stride":   16,
+    "out_root":        "artifacts/exp01"
+}
