@@ -25,3 +25,23 @@ jobs:
         run: cmake --build build --parallel
       - name: Test
         run: ctest --test-dir build --output-on-failure -LE theorem_authority
+
+  sanitizers:
+    name: ASan + UBSan CPU core
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: >-
+          cmake -S . -B build-sanitize
+          -DMT_ENABLE_CUDA=OFF
+          -DMT_BUILD_BENCHMARKS=OFF
+          -DMT_BUILD_TESTS=ON
+          -DMT_DETERMINISTIC=ON
+          -DMT_ENABLE_ASAN=ON
+          -DMT_ENABLE_UBSAN=ON
+          -DCMAKE_BUILD_TYPE=Debug
+      - name: Build
+        run: cmake --build build-sanitize --parallel
+      - name: Test
+        run: ctest --test-dir build-sanitize --output-on-failure -LE theorem_authority
