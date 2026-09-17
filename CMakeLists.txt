@@ -128,6 +128,8 @@ endif()
 # Core library
 # -----------------------------------------------------------------------------
 add_library(mt_core ${MT_CORE_SOURCES})
+mt_set_warnings(mt_core)
+mt_apply_sanitizers(mt_core)
 
 target_include_directories(mt_core PUBLIC
   ${CMAKE_SOURCE_DIR}/include
@@ -177,6 +179,8 @@ endif()
 foreach(_app mt_ingest mt_extract mt_trajectorize mt_backtest mt_benchmark mt_verify_authority)
   add_executable(${_app} apps/${_app}.cpp)
   target_link_libraries(${_app} PRIVATE mt_core)
+  mt_set_warnings(${_app})
+  mt_apply_sanitizers(${_app})
 endforeach()
 
 # -----------------------------------------------------------------------------
