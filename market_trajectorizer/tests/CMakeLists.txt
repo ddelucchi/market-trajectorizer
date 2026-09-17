@@ -49,69 +49,76 @@ include(CTest)
 include(Catch)
 catch_discover_tests(mt_unit_tests)
 
+set(MT_AUTHORITY_SOURCE_FIXTURE "${CMAKE_SOURCE_DIR}/tests/fixtures/authority_fixture.csv")
+
+if(EXISTS "${MT_AUTHORITY_SOURCE_FIXTURE}")
 set(MT_AUTHORITY_FIXTURE_DIR "${CMAKE_CURRENT_BINARY_DIR}/authority_fixture")
-set(MT_AUTHORITY_MANIFEST "${MT_AUTHORITY_FIXTURE_DIR}/symbol_store.json")
-set(MT_AUTHORITY_SYMBOL "AUTH_FIX")
-
-add_test(
-    NAME theorem_authority_prepare_fixture
-        COMMAND $<TARGET_FILE:mt_prepare_authority_fixture>
-            --in ${CMAKE_SOURCE_DIR}/tests/fixtures/authority_fixture.csv
-            --out_dir ${MT_AUTHORITY_FIXTURE_DIR}
-            --manifest ${MT_AUTHORITY_MANIFEST}
-            --symbol ${MT_AUTHORITY_SYMBOL}
-            --timeframe 1d
-)
-set_tests_properties(theorem_authority_prepare_fixture PROPERTIES
-    FIXTURES_SETUP theorem_authority_fixture
-    LABELS "theorem_authority"
-)
-
-add_test(
-        NAME fixture_scaffold_gate
-    COMMAND $<TARGET_FILE:mt_verify_authority>
-      --manifest ${MT_AUTHORITY_MANIFEST}
-            --engine ${CMAKE_SOURCE_DIR}/tests/fixtures/authority_engine_gate.json
-            --gate_level fixture_scaffold_gate
-      --symbol ${MT_AUTHORITY_SYMBOL}
-      --last_only
-      --max_failures 1
-)
-set_tests_properties(fixture_scaffold_gate PROPERTIES
-    FIXTURES_REQUIRED theorem_authority_fixture
-    LABELS "theorem_authority"
-    WILL_FAIL TRUE
-)
-
-add_test(
-        NAME symbol_fixture_exactness_gate
-        COMMAND $<TARGET_FILE:mt_verify_authority>
-            --manifest ${MT_AUTHORITY_MANIFEST}
-            --engine ${CMAKE_SOURCE_DIR}/tests/fixtures/authority_engine_symbol_exactness.json
-            --gate_level symbol_fixture_exactness_gate
-            --symbol ${MT_AUTHORITY_SYMBOL}
-            --last_only
-            --max_failures 1
-)
-set_tests_properties(symbol_fixture_exactness_gate PROPERTIES
-        FIXTURES_REQUIRED theorem_authority_fixture
-        LABELS "theorem_authority"
-        WILL_FAIL TRUE
-)
-
-add_test(
-        NAME production_dataset_authority_gate
-        COMMAND $<TARGET_FILE:mt_verify_authority>
-            --manifest ${MT_AUTHORITY_MANIFEST}
-            --engine ${CMAKE_SOURCE_DIR}/configs/engine/default.json
-            --gate_level production_dataset_authority_gate
-            --production
-            --symbol ${MT_AUTHORITY_SYMBOL}
-            --last_only
-            --max_failures 1
-)
-set_tests_properties(production_dataset_authority_gate PROPERTIES
-        FIXTURES_REQUIRED theorem_authority_fixture
-        LABELS "theorem_authority"
-        WILL_FAIL TRUE
-)
+  set(MT_AUTHORITY_MANIFEST "${MT_AUTHORITY_FIXTURE_DIR}/symbol_store.json")
+  set(MT_AUTHORITY_SYMBOL "AUTH_FIX")
+  
+  add_test(
+      NAME theorem_authority_prepare_fixture
+          COMMAND $<TARGET_FILE:mt_prepare_authority_fixture>
+              --in ${CMAKE_SOURCE_DIR}/tests/fixtures/authority_fixture.csv
+              --out_dir ${MT_AUTHORITY_FIXTURE_DIR}
+              --manifest ${MT_AUTHORITY_MANIFEST}
+              --symbol ${MT_AUTHORITY_SYMBOL}
+              --timeframe 1d
+  )
+  set_tests_properties(theorem_authority_prepare_fixture PROPERTIES
+      FIXTURES_SETUP theorem_authority_fixture
+      LABELS "theorem_authority"
+  )
+  
+  add_test(
+          NAME fixture_scaffold_gate
+      COMMAND $<TARGET_FILE:mt_verify_authority>
+        --manifest ${MT_AUTHORITY_MANIFEST}
+              --engine ${CMAKE_SOURCE_DIR}/tests/fixtures/authority_engine_gate.json
+              --gate_level fixture_scaffold_gate
+        --symbol ${MT_AUTHORITY_SYMBOL}
+        --last_only
+        --max_failures 1
+  )
+  set_tests_properties(fixture_scaffold_gate PROPERTIES
+      FIXTURES_REQUIRED theorem_authority_fixture
+      LABELS "theorem_authority"
+      WILL_FAIL TRUE
+  )
+  
+  add_test(
+          NAME symbol_fixture_exactness_gate
+          COMMAND $<TARGET_FILE:mt_verify_authority>
+              --manifest ${MT_AUTHORITY_MANIFEST}
+              --engine ${CMAKE_SOURCE_DIR}/tests/fixtures/authority_engine_symbol_exactness.json
+              --gate_level symbol_fixture_exactness_gate
+              --symbol ${MT_AUTHORITY_SYMBOL}
+              --last_only
+              --max_failures 1
+  )
+  set_tests_properties(symbol_fixture_exactness_gate PROPERTIES
+          FIXTURES_REQUIRED theorem_authority_fixture
+          LABELS "theorem_authority"
+          WILL_FAIL TRUE
+  )
+  
+  add_test(
+          NAME production_dataset_authority_gate
+          COMMAND $<TARGET_FILE:mt_verify_authority>
+              --manifest ${MT_AUTHORITY_MANIFEST}
+              --engine ${CMAKE_SOURCE_DIR}/configs/engine/default.json
+              --gate_level production_dataset_authority_gate
+              --production
+              --symbol ${MT_AUTHORITY_SYMBOL}
+              --last_only
+              --max_failures 1
+  )
+  set_tests_properties(production_dataset_authority_gate PROPERTIES
+          FIXTURES_REQUIRED theorem_authority_fixture
+          LABELS "theorem_authority"
+          WILL_FAIL TRUE
+  )
+  
+else()
+  message(STATUS "Skipping theorem_authority CTest fixtures: tests/fixtures/authority_fixture.csv is not included in this repository snapshot")
+endif()
