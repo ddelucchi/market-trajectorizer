@@ -92,7 +92,6 @@ set(MT_CORE_SOURCES
   src/backtest/fill_model.cpp
   src/backtest/slippage_model.cpp
   src/backtest/commission_model.cpp
-  src/backtest/position_sizer.cpp
   src/backtest/signal_rules.cpp
   src/backtest/simulator.cpp
   src/backtest/metrics.cpp
@@ -101,7 +100,6 @@ set(MT_CORE_SOURCES
   # api
   src/api/cli_commands.cpp
   src/api/json_io.cpp
-  src/api/result_schema.cpp
   src/api/artifact_writer.cpp
   # app
   src/app/run_ingest.cpp
