@@ -56,7 +56,7 @@ catch_discover_tests(mt_unit_tests)
 set(MT_AUTHORITY_SOURCE_FIXTURE "${CMAKE_SOURCE_DIR}/tests/fixtures/authority_fixture.csv")
 
 if(EXISTS "${MT_AUTHORITY_SOURCE_FIXTURE}")
-set(MT_AUTHORITY_FIXTURE_DIR "${CMAKE_CURRENT_BINARY_DIR}/authority_fixture")
+  set(MT_AUTHORITY_FIXTURE_DIR "${CMAKE_CURRENT_BINARY_DIR}/authority_fixture")
   set(MT_AUTHORITY_MANIFEST "${MT_AUTHORITY_FIXTURE_DIR}/symbol_store.json")
   set(MT_AUTHORITY_SYMBOL "AUTH_FIX")
   
@@ -122,7 +122,7 @@ set(MT_AUTHORITY_FIXTURE_DIR "${CMAKE_CURRENT_BINARY_DIR}/authority_fixture")
           LABELS "theorem_authority"
           WILL_FAIL TRUE
   )
-  
+
 else()
   message(STATUS "Skipping theorem_authority CTest fixtures: tests/fixtures/authority_fixture.csv is not included in this repository snapshot")
 endif()
