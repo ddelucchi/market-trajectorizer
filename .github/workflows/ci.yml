@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  cpu-theorem-scaffold:
+    name: Deterministic CPU build and tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: market_trajectorizer
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: >-
+          cmake -S . -B build
+          -DMT_ENABLE_CUDA=OFF
+          -DMT_BUILD_BENCHMARKS=OFF
+          -DMT_BUILD_TESTS=ON
+          -DMT_DETERMINISTIC=ON
+          -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --parallel
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
