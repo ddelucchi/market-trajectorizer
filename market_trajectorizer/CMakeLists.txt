@@ -89,6 +89,7 @@ set(MT_CORE_SOURCES
   src/engine/pipeline.cpp
   # backtest
   src/backtest/order_model.cpp
+  src/backtest/position_sizer.cpp
   src/backtest/fill_model.cpp
   src/backtest/slippage_model.cpp
   src/backtest/commission_model.cpp
