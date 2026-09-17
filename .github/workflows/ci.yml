@@ -11,9 +11,6 @@ jobs:
   cpu-theorem-scaffold:
     name: Deterministic CPU build and tests
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: market_trajectorizer
     steps:
       - uses: actions/checkout@v4
       - name: Configure
