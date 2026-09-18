@@ -13,3 +13,4 @@ keywords:
   - "c++"
   - "determinism"
   - "time-series"
+repository-code: "https://github.com/ddelucchi/market-trajectorizer"
