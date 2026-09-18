@@ -83,7 +83,7 @@ That missing fixture is a release limitation, not a hidden success condition.
 
 ## Command-line programs
 
-The CMake project builds tools for ingestion, extraction, trajectorization, backtesting, benchmarking, and authority verification. See the subproject README for command examples.
+The CMake project builds tools for ingestion, extraction, trajectorization, backtesting, benchmarking, and authority verification. Executable targets and their source entrypoints are defined directly in the root `CMakeLists.txt`; use each program's built-in help where available and the contracts under `docs/` for interpretation.
 
 ## No performance claim
 
