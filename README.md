@@ -72,14 +72,16 @@ cmake --build build --parallel
 Run the reproducible unit/core suite:
 
 ```bash
-ctest --test-dir build --output-on-failure -LE theorem_authority
+ctest --test-dir build --output-on-failure
 ```
 
-## Authority-gate limitation in this snapshot
+## Authority-gate integration test
 
-The full `theorem_authority` CTest fixture path references a local fixture dataset that is not included in this repository snapshot. CI therefore excludes tests carrying that label rather than pretending the full authority gate is reproducible here.
+The repository now includes a deterministic synthetic OHLCV fixture for exercising the end-to-end authority CLI path from CSV canonicalization through symbol-store generation and anchor verification.
 
-That missing fixture is a release limitation, not a hidden success condition.
+That fixture is deliberately a **negative production gate**. The public CPU implementation is marked non-implementation-authoritative, so `mt_verify_authority --production` must reject the run. CTest marks that rejection as the expected result. This verifies that the software fails closed; it is not evidence that a synthetic fixture satisfies the mathematical theorem conditions or that the engine is production-ready.
+
+Positive theorem semantics remain covered by the unit-level authority harness and contract tests.
 
 ## Command-line programs
 
