@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: cmake --build build --parallel
       - name: Test
-        run: ctest --test-dir build --output-on-failure -LE theorem_authority
+        run: ctest --test-dir build --output-on-failure
 
   sanitizers:
     name: ASan + UBSan CPU core
@@ -44,4 +44,4 @@ jobs:
       - name: Build
         run: cmake --build build-sanitize --parallel
       - name: Test
-        run: ctest --test-dir build-sanitize --output-on-failure -LE theorem_authority
+        run: ctest --test-dir build-sanitize --output-on-failure
