@@ -1,5 +1,7 @@
 # Market Trajectorizer
 
+**For quantitative research and quant-development reviewers:** start with the [Quantitative Research Reviewer's Guide](docs/QUANT_RESEARCH_OVERVIEW.md) for a code map, causality and backtest contracts, current limitations, and the evidence still needed for predictive claims.
+
 Market Trajectorizer is a C++20 research engine for deterministic, causality-aware transformation of historical market time series into mathematical state representations, recurrence models, diagnostic artifacts, and backtest inputs.
 
 It is deliberately framed as research software, not as a claim of profitable trading performance.
